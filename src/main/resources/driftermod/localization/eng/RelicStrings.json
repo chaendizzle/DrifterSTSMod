@@ -1,0 +1,19 @@
+{
+  "${modID}:RelicID": {
+    "NAME": "Good Relic",
+    "FLAVOR": "Flavor text displayed in detailed relic view.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. [E] is an energy icon."
+    ]
+  },
+  "${modID}:badjokebook": {
+    "NAME": "Bad Joke Book",
+    "FLAVOR": "I barely even know 'er!",
+    "DESCRIPTIONS": [
+      "All cards ending in \"er\", \"ir\", \"or\", \"ur\", or \"re\" are #yUpgraded.",
+      " The first ",
+      " times you play one of these cards each combat, apply ",
+      " #yVulnerable to ALL enemies."
+    ]
+  }
+}

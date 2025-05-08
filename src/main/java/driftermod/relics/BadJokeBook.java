@@ -27,7 +27,7 @@ public class BadJokeBook extends BaseRelic {
     private static final int USES = 2;
     private static final int VULN_AMOUNT = 1;
 
-    private static final String[] WORD_ENDINGS = new String[]{"er", "ir", "or", "ur", "re"};
+    private static final String[] WORD_ENDINGS = new String[]{"er", "ir", "or", "ur", "ar", "re"};
 
     public BadJokeBook() {
         super(ID, NAME, RARITY, SOUND);
@@ -35,10 +35,15 @@ public class BadJokeBook extends BaseRelic {
 
     private String validCardPrefix(AbstractCard c)
     {
-        for (String wordEnding : WORD_ENDINGS) {
-            String name = c.name.replaceAll("[^A-za-z ]", "").trim();
-            if (name.toLowerCase().endsWith(wordEnding.toLowerCase())) {
-                return name.substring(0, name.length() - wordEnding.length());
+        String[] words = c.name.split(" ");
+        String prefix = "";
+        for (String word : words) {
+            prefix += word;
+            for (String wordEnding : WORD_ENDINGS) {
+                String name = prefix.replaceAll("[^A-za-z ']", "").trim();
+                if (name.toLowerCase().endsWith(wordEnding.toLowerCase())) {
+                    return name.substring(0, name.length() - wordEnding.length());
+                }
             }
         }
         return null;
